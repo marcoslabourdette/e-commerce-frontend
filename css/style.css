@@ -1,0 +1,570 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --main-gradient: linear-gradient(45deg, #F58529, #DD2A7B);
+    --main-color: #8E44AD; 
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+b {
+    color: #8E44AD;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#modalOverlay {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1500;
+    opacity: 0;
+    transition: 4s;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    cursor: pointer;
+}
+
+.bi-bag {
+    cursor: pointer;
+}
+
+.carritoCompras {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    border: 1px solid var(--main-color);
+    position: fixed;
+    right: -700px;
+    transition: right 0.4s ease;
+    width: 500px;
+    top: 0;
+    overflow-y: auto;
+    z-index: 2000;
+
+    .modalHeader {
+        display: flex;
+        padding: 15px;
+        border-bottom: 1px solid grey;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-transform: uppercase;
+        cursor: pointer;
+        font-size: 12px;
+    }
+
+    i {
+        position: absolute;
+        font-size: 25px;
+        color: grey;
+        right: 0;
+        margin-right: 15px;
+    }
+
+    .carritoVacio {
+        margin-top: 20px;
+        width: 90%;
+        padding: 10px;
+        font-size: 13px;
+        border: 1px solid var(--main-color);
+        border-radius: 5px;
+    }
+}
+
+.carritoCompras.visible {
+    right: 0;
+}
+
+.bi-list {
+    display: none;
+    background-color: white;
+    font-size: 27px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--main-color);
+    margin-left: 15px;
+
+}
+header {
+    display: flex;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    align-items: center;
+    height: 120px;
+    transition: top .3s ease;
+    width: 100%;
+    height: max-content;
+    flex-direction: column;
+    border-bottom: 1px solid var(--main-color);
+
+    .toplabel {
+        text-align: center;
+        padding: 7px;
+        width: 100%;
+        font-size: 12px;
+        width: 100%;
+        z-index: 1000;
+        color: white;
+        background-color: var(--main-color);
+        font-family: "Nunito Sans", sans-serif;
+    }
+
+    section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+
+        div {
+            flex: 1;
+            text-align: center;
+
+            input {
+                font-size: 13px;
+                margin-left: 15px;
+                flex: 1;
+                width: 200px;
+                padding: 7px;
+                font-family: "Nunito Sans", sans-serif;
+                outline: none;
+                border: 1px solid var(--main-color);
+                border-radius: 5px 0 0 5px;
+                border-right: none;
+                color: #000;
+                height: 34px;
+            }
+
+            button {
+                color: var(--main-color);
+                border: none;
+                padding: 10px;
+                position: absolute;
+                height: 34px;
+                margin-top: 0;
+                border: 1px solid var(--main-color);
+                border-left: none;
+                border-radius: 0 5px 5px 0;
+                background-color: white;
+                cursor: pointer;
+                font-size: 13px;
+
+            }
+
+            
+
+        }
+
+        div:first-child {
+            text-align: left;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-family: 'Valken', sans-serif;
+            color: var(--main-color);
+            text-align: center;
+            flex: 0;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-right: 15px;
+
+            li {
+                margin: 10px;
+                color: var(--main-color);
+
+                i {
+                    font-size: 24px;
+                }
+
+                .bi-person {
+                    font-size: 29px;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+        }
+    }
+
+    .navbar {
+        display: flex;
+        width: 100%;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-top: 1px solid var(--main-color);
+
+        ul {
+            list-style: none;
+            display: flex;
+            color: var(--main-color);
+            font-weight: bold;
+            font-family: "Nunito Sans", sans-serif;
+
+            li {
+                margin: 10px;
+                font-size: 15px;
+                padding: 5px;
+
+                .bi-chevron-down {
+                    margin-left: 3px;
+                    font-size: 13px;
+                    font-weight: bold;
+                }
+
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    }
+
+    .sublist {
+        display: flex;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 0.9s ease, height 0.6s ease;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 13px;
+        background-color: var(--main-color);
+
+        ul {
+            display: flex;
+            color: white;
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                margin: 15px;
+                transition: .4s;
+            }
+
+            a:hover {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .sublist.visible {
+        opacity: 1;
+        height: 65px;
+    }
+
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 140px;
+    padding: 50px;
+    width: 100%;
+   
+    .banner {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color:white;
+        color: white;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--main-color);
+        height: 60vh;
+        background-image: url('../assets/img/banner7.png'); 
+        background-size: cover; 
+        animation: scrollBackground 35s linear infinite;
+        
+        .banner-text{
+            background-color: var(--main-color);
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            text-transform: none;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+        .cta-button {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #000000; 
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: .4s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--main-color);
+        }
+    }
+    .productos-destacados {
+        width: 100%;
+        margin-top: 50px;
+        border: 1px solid var(--main-color);
+        padding: 20px;
+        text-align: center; 
+        flex-wrap: wrap; 
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--main-color); 
+        }
+        .producto {
+            display: inline-block;
+            width: 350px;
+            margin: 15px; 
+            border: 1px solid var(--main-color); 
+            padding: 5px;
+            border-radius: 10px;
+            overflow: hidden; 
+            padding-bottom: 5px;
+        }
+
+
+        .producto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            border-bottom: 2px solid var(--main-color);
+            
+        }
+        .producto h3 {
+            font-size: 1.3rem;
+            margin: 5px 0;
+        }
+        .producto p {
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+        .btn {
+            background-color: var(--main-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            padding: 5px;
+        }
+        
+    }
+    
+   
+    .mensajeSaludo {
+        margin-top: 50px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 19px;
+        color: var(--main-color);
+    }
+
+    .como-comprar {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        width: 80%;
+        margin-left: 100px;
+        padding: 20px;
+
+        ol {
+            margin-left: 40px;
+
+            li {
+                font-size: 15px;
+                margin-left: 10px;
+                margin-bottom: 15px;
+            }
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: var(--main-color);
+        }
+
+        ul li {
+            margin-left: 45px;
+        }
+
+    }
+   
+}
+
+
+.footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 400px;
+    margin-top: 50px;
+    background-color: var(--main-color);
+    color: white;
+    font-family: "Nunito Sans", sans-serif;
+
+    .info-nosotros {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        height: 50px;
+
+        .redes-sociales {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            height: max-content;
+
+            h5 {
+                background-color: #612d77;
+                padding: 20px;
+                height: 60px;
+                border-right: 1px solid black;
+                text-align: left;
+            }
+
+            div {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                a {
+                    text-align: center;
+                    padding: 20px;
+                    color: white;
+                    background-color: transparent;
+                    width: 100%;
+                   
+                }
+                a:nth-child(1):hover{
+                    background: var(--main-gradient);
+
+                }
+                a:nth-child(2){
+                    border-right: 1px solid black;
+                }
+                a:nth-child(2):hover {
+                    background-color: #193c88;
+                    
+                }
+
+            }
+
+        }
+
+        .contacto {
+            height: 185px;
+            width: 50%;
+
+            h5 {
+                background-color: #612d77;
+                padding: 20px;
+                text-align: left;
+                height: 60px;
+            }
+
+            div {
+
+                p {
+                    margin: 10px;
+                }
+            }
+
+            i {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .copyright {
+        margin-top: 300px;
+        text-align: center;
+    }
+}
+
+@keyframes scrollBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: -100% 50%; 
+    }
+}
+@media(max-width:700px) {
+    header {
+        .bi-list {
+            display: block;
+        }
+
+        input {
+            display: none;
+        }
+
+        .navbar{
+            display: none;
+        }
+        .bi-list{
+            display: flex;
+        }
+    }
+   
+    .redes-sociales-iconos {
+        flex-direction: column;
+    }
+
+    .redes-sociales-iconos a {
+        width: 100%;
+    }
+
+    footer {
+        a:nth-child(1) {
+            border-right: 1px solid black;
+        }
+    }
+}
