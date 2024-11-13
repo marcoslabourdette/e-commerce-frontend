@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Online de Pipiñatas - Decoraciones</title>
+    <title>Tienda Online de Pipiñatas - Crear cuenta</title>
     <link rel="stylesheet" href="../css/style.css?v=1.0">
     <link rel="shortcut icon" href="../assets/img/icono.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -53,7 +53,7 @@
         <nav class="navbar">
             <ul>
                 <li><a id="menuList">Piñatas<i class="bi bi-chevron-down"></i></a></li>
-                <li><a href="#">Decoraciones</a></li>
+                <li><a href="./decoraciones.html">Decoraciones</a></li>
                 <li><a href="./como-comprar.html">Cómo comprar</a></li>
             </ul>
         </nav>
@@ -71,7 +71,44 @@
     </header>
     <main>
         <section class="main-content">
-            <h1>Decoraciones</h1>
+            <h1>Crear cuenta</h1>
+            <div class="form-container">
+                <form action="/account/create" method="POST" >
+                    <div class="form-group">
+                        <label for="userName">Nombre y apellido</label>
+                        <input required id="userName" type="text" placeholder="Ej: Franco Colapinto">
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">Email</label>
+                        <input maxlength="45" required id="userEmail" type="email" placeholder="Ej: colapinto@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="userTelefono">Teléfono (Opcional)</label>
+                        <input maxlength="25" id="userTelefono" type="text" placeholder="Ej: 112345678">
+                    </div>
+                    <div class="form-group">
+                        <label for="userPassword">Contraseña</label>
+                        <div class="input-container">
+                            <input maxlength="40" required id="userPassword" type="password" placeholder="Ingresá tu contraseña">
+                            <a class="show-password-btn" id="togglePassword"><i class="bi bi-eye-slash"></i></a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="userPasswordConfirm">Confirmar contraseña</label>
+                        <div class="input-container">
+                            <input maxlength="40" required id="userPasswordConfirm" type="password" placeholder="Confirmá tu contraseña">
+                            <a class="show-password-btn" id="togglePasswordConfirm"><i class="bi bi-eye-slash"></i></a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Crear cuenta</button>
+                    </div>
+                    <div class="form-question">
+                        <p>¿Ya tenés una cuenta? </p>
+                        <a href="./login.html">Iniciá sesión</a>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
     <footer class="footer">
