@@ -1280,10 +1280,6 @@ div {
         width: 85vw !important;   
         height: 85vh !important;
         
-        div:first-child{
-
-            border: none;
-        }
     }
     .mostrarModalProducto .img-producto {
         padding: 0;
@@ -1291,19 +1287,21 @@ div {
         justify-content: center;
         align-items: center;
         width: 80vw !important; 
-        height: 80vh !important;
-        border: none;
+        height: 75vh !important;
+        border: 1px solid white !important;
         margin-bottom: 20px;
     }
     .mostrarModalProducto .img-producto img {
         height: 100%;
         width: 100%;
+        border: 1px solid white !important;
         object-fit: cover;
     }
     .mostrarModalProducto .info-producto{
         width: 90vw !important;
         border: none;
         height: 40vh !important;
+        border: 1px solid white !important;
     }
 
 }
