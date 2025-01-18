@@ -199,6 +199,7 @@ i {
 .notificacionProducto_info {
     display: flex;
     width: 100%;
+    font-family: 'Kanit',sans-serif;
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
@@ -879,6 +880,7 @@ a {
     display: flex;
     flex-wrap:wrap;
     width:85%;
+    min-height: max-content;
     margin-top:50px;
     justify-content: space-around;
     align-items: center;
@@ -897,6 +899,7 @@ span {
     height: 250px;
     gap:10px;
     align-items:center;
+    text-align: center;
     justify-content:center;
 
     i{
@@ -1141,12 +1144,6 @@ div {
     }
 }
 
-@media(max-width:750px) {
-    .mostrarModalProducto{
-        width: 60%;
-    }
-}
-
 @media(max-width:700px) {
     header {
         input
@@ -1267,29 +1264,27 @@ div {
             margin-bottom: 0px;
         }
     }
-    .feed-back-container{
-        height: max-content;
-    }
     .mostrarModalProducto {
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 0;
         padding: 0;
         width: 85vw !important;   
-        height: 85vh !important;
+        height: 480px !important;
         
+    }
+    .header-producto{
+        position: absolute;
+        top: 0;
     }
     .mostrarModalProducto .img-producto {
         padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 80vw !important; 
-        height: 75vh !important;
+        margin-top: 65px;
+        width: 85% !important; 
+        height: 300px !important;
         border: 1px solid white !important;
-        margin-bottom: 20px;
     }
     .mostrarModalProducto .img-producto img {
         height: 100%;
@@ -1297,11 +1292,31 @@ div {
         border: 1px solid white !important;
         object-fit: cover;
     }
+    #modalPrecio{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0px;
+        border-top: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        height:40% !important;
+        color: var(--main-color);
+        font-size: 22px;
+        padding: 8px;
+        font-family: 'Kanit', sans-serif;
+        font-weight: bold;
+    }
+    .input-cantidad{
+        height:60%;
+    }
     .mostrarModalProducto .info-producto{
-        width: 90vw !important;
+        width: 100% !important;
         border: none;
-        height: 40vh !important;
+        gap: 0;
+        margin: 0;
+        padding: 0;
         border: 1px solid white !important;
     }
-
-}
+    }
+   
