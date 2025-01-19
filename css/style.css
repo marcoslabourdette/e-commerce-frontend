@@ -1253,6 +1253,7 @@ div {
         height: 100%;
     }
     .main-content{
+        margin-top: 120px;
         padding: 30px;
     }
     .main-content.home{
@@ -1271,7 +1272,7 @@ div {
         align-items: center;
         gap: 0;
         padding: 0;
-        width: 85vw !important;   
+        width: 90vw !important;   
         height: 480px !important;
         
     }
@@ -1289,26 +1290,33 @@ div {
     .mostrarModalProducto .img-producto img {
         height: 100%;
         width: 100%;
-        border: 1px solid white !important;
+        border: 1px solid white;
         object-fit: cover;
     }
+    .input-cantidad{
+        width: 100%;
+        height: 100%;
+        border-bottom: none;
+    }
+    #cantidad{
+        padding-top: 15px;
+        padding-right: 15px;
+    }
+    .agregar-al-carrito{
+        font-size: 13px;
+        width: 100%;
+        border: 3px solid var(--main-color);
+        text-align: center;
+    }
     #modalPrecio{
-        display: flex;
-        justify-content: center;
-        align-items: center;
         text-align: center;
         margin: 0px;
         border-top: 2px solid var(--main-color);
-        border-bottom: 2px solid var(--main-color);
         height:40% !important;
         color: var(--main-color);
-        font-size: 22px;
-        padding: 8px;
-        font-family: 'Kanit', sans-serif;
+        font-size: 20px;
+        padding:15px;
         font-weight: bold;
-    }
-    .input-cantidad{
-        height:60%;
     }
     .mostrarModalProducto .info-producto{
         width: 100% !important;
@@ -1317,6 +1325,50 @@ div {
         margin: 0;
         padding: 0;
         border: 1px solid white !important;
+    }
+    .notificacionProducto{
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .como-comprar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px !important;
+        gap: 5px;
+        p{
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px !important;
+            font-size: 16px !important;
+        }
+        ol{
+            margin: 10px !important;
+
+            li{
+                margin: 0 0 20px 0 !important;
+                font-size: 12px !important;
+                text-align: justify;
+                line-height: 1.3rem;
+            }
+            li::marker{
+                font-size: 13px;
+                font-weight: bold;
+                color: var(--main-color) ;
+            }
+        }
+    }
+    .mensajeSaludo{
+        font-size: 16px !important;
+        margin-top: 30px !important;
+       }
+    .footer{
+        h5{
+            font-size: 12px;
+        }
+        p{
+            font-size: 14px;
+        }
     }
     }
    
