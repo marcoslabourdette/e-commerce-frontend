@@ -36,11 +36,11 @@
         <div class="toplabel text-center">🚐 Envío gratis en compras superiores a $50.000 🚐</div>
         <section>
             <div>
-                <input type="text" name="search" id="search" placeholder="¿Qué estás buscando?">
-                <button type="submit" class="btn search-input-submit" aria-label="Buscar">
+                <input type="text" name="search" id="search" placeholder="¿Qué estás buscando?" oninput="searchProducts()">
+                <button type="submit" class="search-input-submit" aria-label="Buscar">
                     <i class="bi bi-search"></i>
                 </button>
-                <a><i class="bi bi-list"></i></a>
+                <a><i class="bi bi-list"></i> </a>
             </div>
             <div class="logo"><a href="../index.html">Pipiñatas</a></div>
             <div>
@@ -73,14 +73,35 @@
         <section class="main-content">
             <h1>Decoraciones</h1>
             <div class="decoraciones-container">
-                <div>
-                    <img src="../assets/img/banderin-decoracion.png" alt="">
-                    <img src="../assets/img/looney-decoracion.png" alt="">
-                    <img src="../assets/img/cumple-decoracion.png" alt="">
-                    <img src="../assets/img/paw-patrol-decoracion.png" alt="">
-                    <img src="../assets/img/truck-decoracion.png" alt="">
+                <div class="scrolling-botones">
+                    <i class="bi bi-arrow-left"></i>
                 </div>
-            </div>
+                <div class="scrollable">
+                    <div class="scrolling-card decoraciones">
+                        <img src="../assets/img/looney-decoracion.png" alt="">
+                    </div>
+                    <div class="scrolling-card decoraciones">
+                        <img src="../assets/img/cumple-decoracion.png" alt="">
+                    </div>
+                    <div class="scrolling-card decoraciones">
+                        <img src="../assets/img/paw-patrol-decoracion.png" alt="">
+                    </div>
+                    <div class="scrolling-card decoraciones">
+                        <img src="../assets/img/avengers-decoracion.png" alt="">
+                    </div>
+                    <div class="scrolling-card decoraciones">
+                        <img src="../assets/img/fiesta-decoracion.png" alt="">
+                    </div>
+                    <div class="scrolling-card decoraciones">
+                        <img src="../assets/img/cumpleanos-decoracion.png" alt="">
+                    </div>
+                    <div class="scrolling-card decoraciones">
+                        <img src="../assets/img/hotwheels-decoracion.png" alt="">
+                    </div>
+                </div>
+                <div class="scrolling-botones">
+                    <i class="bi bi-arrow-right"></i>
+                </div>
         </section>
     </main>
     <footer class="footer">
@@ -93,7 +114,7 @@
                 </div>
             </div>
             <div class="contacto">
-                <h5>CONTACTÁNOS</h5>
+                <h5>CONTACTÁNOS :</h5>
                 <div>
                     <p><i class="bi bi-telephone"></i>2281542019</p>
                     <p><i class="bi bi-envelope"></i>pipinatas@gmail.com</p>

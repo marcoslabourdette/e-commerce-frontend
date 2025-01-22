@@ -204,6 +204,24 @@ function adjustMenu() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    const leftArrow = document.querySelector('.bi-arrow-left');
+    const rightArrow = document.querySelector('.bi-arrow-right');
+    const scrollable = document.querySelector('.scrollable');
+    leftArrow.addEventListener('click', function () {
+        scrollable.scrollBy({
+            left: -350,
+            behavior: 'smooth'
+        });
+    });
+    rightArrow.addEventListener('click', function () {
+        scrollable.scrollBy({
+            left: 350,
+            behavior: 'smooth'
+        });
+    });
+});
+
 window.addEventListener('resize', adjustMenu);
 window.addEventListener('DOMContentLoaded', adjustMenu);
 
