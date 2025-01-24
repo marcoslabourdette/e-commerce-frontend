@@ -7,7 +7,7 @@
 a {
     text-decoration: none;
 }
-a, button, i, .modalHeader, img {
+a, button, i, .modalHeader, img, #modalOverlay {
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -464,7 +464,7 @@ a:hover {
     align-items: center;
     height: 60vh;
     margin-bottom: 70px;
-    background-image: url('../assets/img/banner2.png');
+    background-image: url('../assets/img/banner3.png');
     background-size: cover;
     animation: scrollBackground 35s linear infinite;
 }
@@ -1117,6 +1117,7 @@ div {
     height:300px;
     align-items: center;
     overflow-x:auto;
+    overflow-y: hidden;
 }
 .scrollable {
     display: flex;
@@ -1125,6 +1126,7 @@ div {
     height:100%;
     width:100%;
     overflow-x: auto;
+    overflow-y: hidden;
     gap: 15px;
     scroll-behavior: smooth;
 }
@@ -1143,17 +1145,26 @@ div {
 .scrolling-card,.decoraciones {
     flex: 0 0 auto;
     border: solid 1px var(--main-color);
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 450px;
+    overflow-y: hidden;
     img
 {
-    object-fit:cover;
+    object-fit:contain;
+    object-position: center;
     width:100%;
     height:100%;
 }
 .decoraciones {
     width:70%;
 }
+}
+.decoraciones-container{
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
 }
 .scrollable::-webkit-scrollbar {
     display:none;
@@ -1306,6 +1317,10 @@ div {
     margin-bottom: 0px;
 }
 
+}
+.home h1 {
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 h2 {

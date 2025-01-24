@@ -185,6 +185,7 @@ function adjustMenu() {
             sublist = document.createElement('ul');
             sublist.classList.add('sublist-responsive');
             sublist.innerHTML = `
+                <i class="bi bi-x"></i>
                 <li><a href="/Pinatas/Infantiles">INFANTILES</a></li>
                 <li><a href="/Pinatas/Animales">ANIMALES</a></li>
                 <li><a href="/Pinatas/Deportes">DEPORTES</a></li>
@@ -210,13 +211,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const scrollable = document.querySelector('.scrollable');
     leftArrow.addEventListener('click', function () {
         scrollable.scrollBy({
-            left: -350,
+            left: -600,
             behavior: 'smooth'
         });
     });
     rightArrow.addEventListener('click', function () {
         scrollable.scrollBy({
-            left: 350,
+            left: 600,
             behavior: 'smooth'
         });
     });

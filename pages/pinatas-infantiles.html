@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piñatas Infantiles | Pipiñatas</title>
+    <link rel="stylesheet" href="../css/style.css?v=1.0">
+    <link rel="shortcut icon" href="../assets/img/icono.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/valken" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="carritoCompras">
+        <div class="modalHeader">
+            <label>Carrito de compras</label>
+            <i class="bi bi-x"></i>
+        </div>
+        <div class="carritoContenido text-center">
+            <p>El carrito de compras está vacío 💔</p>
+        </div>
+    </div>
+    <div id="notificacionProducto" class="notificacionProducto">
+        <div class="notificacionProducto_info">
+            <img id="notificacionImagen" src="" alt="Imagen del producto" />
+            <span id="notificacionNombre"></span>
+        </div>
+        <label id="notificacionCantidad"></label>
+        <h5>¡Agregado con éxito! ✅</h5>
+    </div>
+    <header class="header">
+        <div class="toplabel text-center">🚐 Envío gratis en compras superiores a $50.000 🚐</div>
+
+        <section>
+            <div>
+                <input type="text" name="search" id="search" placeholder="¿Qué estás buscando?"
+                    oninput="searchProducts()">
+                <button type="submit" class="search-input-submit" aria-label="Buscar">
+                    <i class="bi bi-search"></i>
+                </button>
+                <a><i class="bi bi-list"></i> </a>
+            </div>
+            <div class="logo"><a href="../index.html">Pipiñatas</a></div>
+            <div>
+                <ul>
+                    <li><a href="./pages/login.html"><i class="bi bi-person"></i></a></li>
+                    <li><i class="bi bi-bag"></i></li>
+                </ul>
+            </div>
+        </section>
+        <nav class="navbar">
+            <ul>
+                <li><a id="menuList">Piñatas<i class="bi bi-chevron-down"></i></a></li>
+                <li><a href="./decoraciones.html">Decoraciones</a></li>
+                <li><a href="./como-comprar.html">Cómo comprar</a></li>
+            </ul>
+        </nav>
+        <div class="sublist">
+            <ul>
+                <li><a href="./pinatas-infantiles.html">INFANTILES</a></li>
+                <li><a href="">ANIMALES</a></li>
+                <li><a href="">DEPORTES</a></li>
+                <li><a href="">SUPERHÉROES</a></li>
+                <li><a href="">HALLOWEEN</a></li>
+                <li><a href="">MINIS</a></li>
+            </ul>
+        </div>
+        <div id="modalOverlay"></div>
+    </header>
+    <main>
+        <section class="main-content home">
+            <h1><a href="../index.html">Inicio</a> | infantiles</h1>
+            <section class="productos-destacados">
+                <div id="productos-container" class="productos-container">
+                    <div class="producto" data-producto-id="Piñata Minnie" data-producto-nombre="Minnie"
+                        data-producto-precio="7500,00" data-producto-imagen="../assets/img/minnie-pinata.png"
+                        onclick="mostrarModalProducto(this)">
+                        <img src="../assets/img/minnie-pinata.png" alt="Nombre del producto">
+                        <div class="info">
+                            <h3>Piñata Minnie</h3>
+                            <p>$7500,00</p>
+                            <i class="btn bi bi-bag" title="Agregar al carrito."></i>
+                        </div>
+                    </div>
+                    <div class="producto" data-producto-id="Piñata Mickey" data-producto-nombre="Mickey"
+                    data-producto-precio="7500,00" data-producto-imagen="../assets/img/mickey-pinata.png"
+                    onclick="mostrarModalProducto(this)">
+                    <img src="../assets/img/mickey-pinata.png" alt="Nombre del producto">
+                    <div class="info">
+                        <h3>Piñata Mickey</h3>
+                        <p>$7500,00</p>
+                        <i class="btn bi bi-bag" title="Agregar al carrito."></i>
+                    </div>
+                   </div>
+                    <div class="producto" data-producto-id="Piñata Sonic" data-producto-nombre="Sonic"
+                        data-producto-precio="8700,00" data-producto-imagen="../assets/img/sonic-pinata.png"
+                        onclick="mostrarModalProducto(this)">
+                        <img src="../assets/img/sonic-pinata.png" alt="Nombre del producto">
+                        <div class="info">
+                            <h3>Piñata Sonic</h3>
+                            <p>$8700,00</p>
+                            <i class="btn bi bi-bag" title="Agregar al carrito."></i>
+                        </div>
+                    </div>
+                    <div class="producto" data-producto-id="Piñata Willy Wonka" data-producto-nombre="Mario Bros"
+                        data-producto-precio="8600,00" data-producto-imagen="../assets/img/mario-bros-pinata.png"
+                        onclick="mostrarModalProducto(this)">
+                        <img src="../assets/img/mario-bros-pinata.png" alt="Nombre del producto">
+                        <div class="info">
+                            <h3>Piñata Mario Bros</h3>
+                            <p>$8600,00</p>
+                            <i class="btn bi bi-bag" title="Agregar al carrito."></i>
+                        </div>
+                    </div>
+                    <div class="producto" data-producto-id="Piñata Willy Wonka" data-producto-nombre="Willy Wonka"
+                        data-producto-precio="9400,00" data-producto-imagen="../assets/img/willywonka-pinata.png"
+                        onclick="mostrarModalProducto(this)">
+                        <img src="../assets/img/willywonka-pinata.png" alt="Nombre del producto">
+                        <div class="info">
+                            <h3>Piñata Willy Wonka</h3>
+                            <p>$9400,00</p>
+                            <i class="btn bi bi-bag" title="Agregar al carrito."></i>
+                        </div>
+                    </div>
+                    <div class="producto" data-producto-id="Piñata Sonic" data-producto-nombre="Paw Patrol"
+                        data-producto-precio="7700,00" data-producto-imagen="../assets/img/paw-patrol-pinata.png"
+                        onclick="mostrarModalProducto(this)">
+                        <img src="../assets/img/paw-patrol-pinata.png" alt="Nombre del producto">
+                        <div class="info">
+                            <h3>Piñata Paw Patrol</h3>
+                            <p>$7700,00</p>
+                            <i class="btn bi bi-bag" title="Agregar al carrito."></i>
+                        </div>
+                    </div>
+                    <div class="producto" data-producto-id="Piñata Pokémon" data-producto-nombre="Pokémon"
+                    data-producto-precio="8200,00" data-producto-imagen="../assets/img/pokemon-pinata.png"
+                    onclick="mostrarModalProducto(this)">
+                    <img src="../assets/img/pokemon-pinata.png" alt="Nombre del producto">
+                    <div class="info">
+                        <h3>Piñata Pokémon</h3>
+                        <p>$8200,00</p>
+                        <i class="btn bi bi-bag" title="Agregar al carrito."></i>
+                    </div>
+                   </div>
+                   <div class="producto" data-producto-id="Piñata Plim Plim" data-producto-nombre="Plim Plim"
+                   data-producto-precio="7500,00" data-producto-imagen="../assets/img/plimplim-pinata.png"
+                   onclick="mostrarModalProducto(this)">
+                   <img src="../assets/img/plimplim-pinata.png" alt="Nombre del producto">
+                   <div class="info">
+                       <h3>Piñata Plim Plim</h3>
+                       <p>$7500,00</p>
+                       <i class="btn bi bi-bag" title="Agregar al carrito."></i>
+                   </div>
+                  </div>
+                    <div class="mostrarModalProducto" id="modalProducto" style="display: none;">
+                        <div class="img-producto">
+                            <img id="modalImagen" src="" alt="Imagen Producto">
+                        </div>
+                        <div class="info-producto">
+                            <div class="header-producto">
+                                <h3 id="modalNombre">Nombre producto</h3>
+                                <i class="btnCerrar bi bi-x"></i>
+                            </div>
+                            <p id="modalPrecio"></p>
+                            <div class="input-cantidad">
+                                <div>
+                                    <button type="button" class="btn-decrement" onclick="decrementar()">-</button>
+                                    <input type="number" id="cantidad" name="cantidad" value="1" min="1" max="10"
+                                        step="1" readonly />
+                                    <button type="button" class="btn-increment" onclick="incrementar()">+</button>
+                                </div>
+                                <div>
+                                    <a class="btn agregar-al-carrito" onclick="agregarAlCarrito()">Agregar al
+                                        carrito</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+            </section>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="info-nosotros">
+            <div class="redes-sociales">
+                <h5>SEGUINOS EN :</h5>
+                <div class="redes-sociales-iconos">
+                    <a href="https://www.instagram.com/_pipinatas/" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="https://es-la.facebook.com/" target="_blank"><i class="bi bi-facebook"></i></a>
+                </div>
+            </div>
+            <div class="contacto">
+                <h5>CONTACTÁNOS :</h5>
+                <div>
+                    <p><i class="bi bi-telephone"></i>2281542019</p>
+                    <p><i class="bi bi-envelope"></i>pipinatas@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© Pipiñatas 2025 | Con amor por Sofi 💗</p>
+    </footer>
+    <script src="../js/carrito.js?v=1.0"></script>
+    <script src="../js/script.js?v=1.0"></script>
+</body>
+
+</html>
