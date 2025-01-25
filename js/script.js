@@ -11,6 +11,7 @@ const btnCarrito = document.querySelector(".bi-bag");
 const btnMenu = document.querySelector(".bi-list");
 const btnCerrarCarrito = document.querySelector(".modalHeader");
 const modalOverlay = document.getElementById("modalOverlay");
+const modalProducto = document.getElementById('modalProducto');
 const passwordInput = document.getElementById('userPassword');
 const passwordInputConfirm = document.getElementById('userPasswordConfirm');
 const togglePassword = document.getElementById('togglePassword');
@@ -76,7 +77,7 @@ function cerrarOverlay() {
     modalOverlay.style.opacity = "0";
     document.body.style.overflow = 'visible';
     carritoCompras.classList.remove('visible');
-    if (modalProducto) {
+    if (modalProducto != null) {
         modalProducto.style.display = 'none';
         reiniciarCantidad();
     }
@@ -119,7 +120,6 @@ function changeText() {
 
 function mostrarModalProducto(productoElement) {
     abrirOverlay();
-    const modalProducto = document.getElementById('modalProducto');
     const cerrarModalProducto = document.querySelector(".btnCerrar");
     cerrarModalProducto.addEventListener('click', () => {
         cerrarOverlay();
@@ -174,6 +174,7 @@ window.addEventListener("scroll", function () {
 
 function adjustMenu() {
     const menuList = document.getElementById('menuList');
+    const banner = document.querySelector('.banner');
     menuList.style.cursor = 'pointer';
     menuList.style.paddingBottom = '0';
     const screenWidth = window.innerWidth;
@@ -181,17 +182,32 @@ function adjustMenu() {
     let sublist = menuList.querySelector('.sublist-responsive');
 
     if (screenWidth < 700) {
-        if (!sublist) {
+        if(banner != null && !sublist){
             sublist = document.createElement('ul');
             sublist.classList.add('sublist-responsive');
             sublist.innerHTML = `
-                <i class="bi bi-x"></i>
-                <li><a href="/Pinatas/Infantiles">INFANTILES</a></li>
-                <li><a href="/Pinatas/Animales">ANIMALES</a></li>
-                <li><a href="/Pinatas/Deportes">DEPORTES</a></li>
-                <li><a href="/Pinatas/Superheroes">SUPERHÉROES</a></li>
-                 <li><a href="/Pinatas/Halloween">HALLOWEEN</a></li>
-                <li><a href="/Pinatas/Minis">MINIS</a></li>
+                <li><a href="./pages/pinatas-infantiles.html">INFANTILES</a></li>
+                <li><a href="./pages/pinatas-animales.html">ANIMALES</a></li>
+                <li><a href="./pages/pinatas-deportes.html">DEPORTES</a></li>
+                <li><a href="./pages/pinatas-superheroes.html">SUPERHÉROES</a></li>
+                 <li><a href="./pages/pinatas-halloween.html">HALLOWEEN</a></li>
+                <li><a href="./pages/pinatas-infantiles.html">MINIS</a></li>
+            `;
+            menuList.appendChild(sublist);
+            menuList.addEventListener('click', () => {
+                sublist.classList.toggle('visible');
+            });
+        }
+        else if (!sublist) {
+            sublist = document.createElement('ul');
+            sublist.classList.add('sublist-responsive');
+            sublist.innerHTML = `
+                <li><a href="./pinatas-infantiles.html">INFANTILES</a></li>
+                <li><a href="./pinatas-animales.html">ANIMALES</a></li>
+                <li><a href="./pinatas-deportes.html">DEPORTES</a></li>
+                <li><a href="./pinatas-superheroes.html">SUPERHÉROES</a></li>
+                 <li><a href="./pinatas-halloween.html">HALLOWEEN</a></li>
+                <li><a href="./pinatas-infantiles.html">MINIS</a></li>
             `;
             menuList.appendChild(sublist);
             menuList.addEventListener('click', () => {
@@ -209,18 +225,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const leftArrow = document.querySelector('.bi-arrow-left');
     const rightArrow = document.querySelector('.bi-arrow-right');
     const scrollable = document.querySelector('.scrollable');
-    leftArrow.addEventListener('click', function () {
-        scrollable.scrollBy({
-            left: -600,
-            behavior: 'smooth'
+    if(leftArrow != null){
+        leftArrow.addEventListener('click', function () {
+            scrollable.scrollBy({
+                left: -600,
+                behavior: 'smooth'
+            });
         });
-    });
-    rightArrow.addEventListener('click', function () {
-        scrollable.scrollBy({
-            left: 600,
-            behavior: 'smooth'
+    }
+    if(rightArrow != null){
+        rightArrow.addEventListener('click', function () {
+            scrollable.scrollBy({
+                left: 600,
+                behavior: 'smooth'
+            });
         });
-    });
+    }
 });
 
 window.addEventListener('resize', adjustMenu);
