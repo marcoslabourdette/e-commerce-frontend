@@ -191,7 +191,7 @@ function adjustMenu() {
                 <li><a href="./pages/pinatas-deportes.html">DEPORTES</a></li>
                 <li><a href="./pages/pinatas-superheroes.html">SUPERHÉROES</a></li>
                  <li><a href="./pages/pinatas-halloween.html">HALLOWEEN</a></li>
-                <li><a href="./pages/pinatas-infantiles.html">MINIS</a></li>
+                <li><a href="./pages/pinatas-minis.html">MINIS</a></li>
             `;
             menuList.appendChild(sublist);
             menuList.addEventListener('click', () => {
@@ -207,7 +207,7 @@ function adjustMenu() {
                 <li><a href="./pinatas-deportes.html">DEPORTES</a></li>
                 <li><a href="./pinatas-superheroes.html">SUPERHÉROES</a></li>
                  <li><a href="./pinatas-halloween.html">HALLOWEEN</a></li>
-                <li><a href="./pinatas-infantiles.html">MINIS</a></li>
+                <li><a href="./pinatas-minis.html">MINIS</a></li>
             `;
             menuList.appendChild(sublist);
             menuList.addEventListener('click', () => {

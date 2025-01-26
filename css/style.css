@@ -579,6 +579,7 @@ div:nth-child(2) {
 
 .info-producto {
     display:flex;
+    width: 100%;
     gap:10px;
     flex-direction:column;
 
@@ -612,19 +613,22 @@ div:nth-child(2) {
 p {
     margin:15px 0 15px 0;
     font-size:1.1rem;
+    text-align: center;
 }
 }
 
 img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
 }
 .input-cantidad {
     display: flex;
     border:none;
     width:100%;
-    justify-content:space-between;
+    height: 55px;
+    justify-content:center;
     align-items: center;
     
     div
@@ -639,7 +643,8 @@ img {
 
     button
 {
-    width: 80px;
+    width: 40%;
+    height: 100%;
     padding: 15px;
     background-color: white;
     color: var(--main-color);
@@ -652,14 +657,15 @@ img {
 button:first-child {
     border-left:none;
 }
+.agregar-al-carrito{
+    width: 100%;
+}
 }
 
 }
 input[type="number"] {
-    width: 50px;
-    height:40px;
+    width: 20%;
     text-align: center;
-    padding-left:15px;
     font-size: .9rem;
     outline:none;
     border:none;
@@ -1181,13 +1187,16 @@ div {
     }
 }
 
-@media(max-width:750px) {
-    .como-comprar {
-        margin: 50px auto;
+@media(max-width:1550px) {
+    .mostrarModalProducto{
+        width: 60vw !important;
+    }
+    .agregar-al-carrito{
+        font-size: 13px;
     }
 }
 
-@media(max-width:700px) {
+@media(max-width:1000px) {
     header {
         input
 
@@ -1198,7 +1207,6 @@ div {
 .search-input-submit {
     display: none;
 }
-
 .navbar {
     display: flex;
     flex-direction: column;
@@ -1256,6 +1264,9 @@ div {
     display: none;
 }
 
+}
+.mostrarModalProducto{
+    width: 85vw !important;
 }
 
 .redes-sociales {
@@ -1337,7 +1348,7 @@ h2 {
     padding: 0 !important;
     width: 90vw !important;
     border: 2px solid var(--main-color) !important;
-    height: 480px !important;
+    height: max-content !important;
 }
 
 .header-producto {
@@ -1362,17 +1373,14 @@ h2 {
 
 .input-cantidad {
     width: 100% !important;
-    height: 100%;
 }
-
-#cantidad {
-    padding-top: 15px;
-    padding-right: 15px;
+.input-cantidad > div{
+border-bottom: none !important;
 }
-
 .agregar-al-carrito {
     font-size: 13px;
     width: 100%;
+    height: 100% !important;
     padding: 0 !important;
     border: 3px solid var(--main-color);
     text-align: center;
@@ -1481,8 +1489,8 @@ ol {
 {
     margin: 0 0 20px 0 !important;
     font-size: 13px !important;
-    text-align: justify;
     line-height: 1.3rem;
+
 }
 
 li::marker {
